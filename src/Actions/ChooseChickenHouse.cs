@@ -5,13 +5,13 @@ using Trestlebridge.Models;
 using Trestlebridge.Models.Animals;
 
 namespace Trestlebridge.Actions {
-    public class ChooseGrazingField {
-        public static void CollectInput (Farm farm, IGrazing animal) {
+    public class ChooseChickenHouse {
+        public static void CollectInput (Farm farm, Chicken chix) {
             Console.Clear();
 
-            for (int i = 0; i < farm.GrazingFields.Count; i++)
+            for (int i = 0; i < farm.ChickenHouses.Count; i++)
             {
-                Console.WriteLine ($"{i + 1}. Grazing Field");
+                Console.WriteLine ($"{i + 1}. Chicken House");
             }
 
             Console.WriteLine ();
@@ -23,7 +23,7 @@ namespace Trestlebridge.Actions {
             int choice = Int32.Parse(Console.ReadLine ());
             int realChoice = choice - 1;
 
-            farm.GrazingFields[realChoice].AddResource(animal);
+            farm.ChickenHouses[realChoice].AddResource(chix);
 
             /*
                 Couldn't get this to work. Can you?
