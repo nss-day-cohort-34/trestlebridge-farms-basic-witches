@@ -24,6 +24,8 @@ namespace Trestlebridge.Actions {
             int realChoice = choice - 1;
 
             farm.GrazingFields[realChoice].AddResource(animal);
+            Console.WriteLine($"A {animal} has been added to the facility. Press the 'Enter' key to continue");
+            Console.ReadLine();
 
             /*
                 Couldn't get this to work. Can you?
