@@ -6,6 +6,8 @@ using Trestlebridge.Models.Animals;
 
 namespace Trestlebridge.Actions {
     public class ChooseGrazingField {
+        
+        
         public static void CollectInput (Farm farm, IGrazing animal) {
             Console.Clear();
 
@@ -24,7 +26,7 @@ namespace Trestlebridge.Actions {
             int realChoice = choice - 1;
 
             farm.GrazingFields[realChoice].AddResource(animal);
-            Console.WriteLine($"A {animal} has been added to the facility. Press the 'Enter' key to continue");
+            Console.WriteLine($"A {animal} has been added to the facility. You currently have {farm.GrazingFields[realChoice].GetGrazingAnimalCount()} grazing animal(s) in this house. Press the 'Enter' key to continue.");
             Console.ReadLine();
 
             /*

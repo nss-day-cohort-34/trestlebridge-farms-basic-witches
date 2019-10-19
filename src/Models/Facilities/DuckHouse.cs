@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models.Animals;
+using System.Linq;
 
 namespace Trestlebridge.Models.Facilities {
     public class DuckHouse : IFacility<Duck>
@@ -16,6 +17,12 @@ namespace Trestlebridge.Models.Facilities {
                 return _capacity;
             }
         }
+
+          //method for returning count of ducks
+          public int GetDuckCount() {
+            return DucksList.Count();
+        }
+
         List<Duck> DucksList = new List<Duck>();
         public void AddResource (Duck duck)
         {
