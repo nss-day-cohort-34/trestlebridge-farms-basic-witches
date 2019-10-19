@@ -11,10 +11,12 @@ namespace Trestlebridge.Actions {
 
             for (int i = 0; i < farm.DuckHouses.Count; i++)
             {
-                if ((farm.DuckHouses[i].Capacity) >= farm.DuckHouses[i].GetDuckCount()) {
+                if ((farm.DuckHouses[i].Capacity) > farm.DuckHouses[i].GetDuckCount()) {
                    Console.WriteLine ($"{i + 1}. Duck House currently has {farm.DuckHouses[i].GetDuckCount()} duck(s) in stock with a capacity of {farm.DuckHouses[i].Capacity} ducks."); 
+                } else {
+                     Console.WriteLine("You do not currently have the capacity to add this animal. Please add a new facility.");
+
                 }
-                
             }
 
             Console.WriteLine ();

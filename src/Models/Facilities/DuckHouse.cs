@@ -8,7 +8,7 @@ using System.Linq;
 namespace Trestlebridge.Models.Facilities {
     public class DuckHouse : IFacility<Duck>
     {
-        private int _capacity = 50;
+        private int _capacity = 1;
         private Guid _id = Guid.NewGuid();
 
 
