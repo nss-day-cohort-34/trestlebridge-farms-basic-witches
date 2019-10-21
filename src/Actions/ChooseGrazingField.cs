@@ -36,6 +36,11 @@ namespace Trestlebridge.Actions {
                 {
                     // How can I output the type of animal chosen here?
                     Console.WriteLine($"{i + 1}: This grazing field currently has {availableGrazingFields[i].GetGrazingAnimalCount()} animal(s) in stock with a capacity of {availableGrazingFields[i].Capacity} animals.");
+                    availableGrazingFields[i].getCows();
+                    availableGrazingFields[i].getGoats();
+                    availableGrazingFields[i].getOstriches();
+                    availableGrazingFields[i].getPigs();
+                    availableGrazingFields[i].getSheep();
                     Console.WriteLine($"Enter house number to send animal");
                     Console.Write("> ");
                     int choice = Int32.Parse(Console.ReadLine());
