@@ -13,24 +13,30 @@ namespace Trestlebridge.Actions {
             {
                 if ((farm.DuckHouses[i].Capacity) > farm.DuckHouses[i].GetDuckCount()) {
                    Console.WriteLine ($"{i + 1}. Duck House currently has {farm.DuckHouses[i].GetDuckCount()} duck(s) in stock with a capacity of {farm.DuckHouses[i].Capacity} ducks."); 
-                } else {
-                     Console.WriteLine("You do not currently have the capacity to add this animal. Please add a new facility.");
 
+                    // How can I output the type of animal chosen here?
+                    Console.WriteLine ($"Place the duck where?");
+
+                    Console.Write ("> ");
+                    int choice = Int32.Parse(Console.ReadLine ());
+                    int realChoice = choice - 1;
+
+                    farm.DuckHouses[realChoice].AddResource(duck);
+
+                    Console.WriteLine($"A duck has been added to the facility. You currently have {farm.DuckHouses[realChoice].GetDuckCount()} duck(s) in this house. Press the 'Enter' key to continue.");
+                    
+                    Console.ReadLine();
+                    
+                    } else {
+                        Console.WriteLine("You do not currently have the capacity to add this animal. Please add a new facility. Press ENTER to continue.");
+                        Console.ReadLine();
+                     
                 }
-            }
+            }   
 
-            Console.WriteLine ();
+            
 
-            // How can I output the type of animal chosen here?
-            Console.WriteLine ($"Place the duck where?");
-
-            Console.Write ("> ");
-            int choice = Int32.Parse(Console.ReadLine ());
-            int realChoice = choice - 1;
-
-            farm.DuckHouses[realChoice].AddResource(duck);
-            Console.WriteLine($"A duck has been added to the facility. You currently have {farm.DuckHouses[realChoice].GetDuckCount()} duck(s) in this house. Press the 'Enter' key to continue.");
-            Console.ReadLine();
+           
 
             /*
                 Couldn't get this to work. Can you?
