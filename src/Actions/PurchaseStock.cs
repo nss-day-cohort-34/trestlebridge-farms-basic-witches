@@ -29,18 +29,18 @@ namespace Trestlebridge.Actions {
                case 3:
                    ChooseChickenHouse.CollectInput(farm, new Chicken());
                    break;
-            //    case 4:
-            //        ChooseGrazingField.CollectInput(farm, new Duck());
-            //        break;
-            //    case 5:
-            //        ChooseGrazingField.CollectInput(farm, new Goat());
-            //        break;
-            //    case 6:
-            //        ChooseGrazingField.CollectInput(farm, new Pig());
-            //        break;
-            //    case 7:
-            //        ChooseGrazingField.CollectInput(farm, new Sheep());
-            //        break;
+               case 4:
+                   ChooseDuckHouse.CollectInput(farm, new Duck());
+                   break;
+               case 5:
+                   ChooseGrazingField.CollectInput(farm, new Goat());
+                   break;
+               case 6:
+                   ChooseGrazingField.CollectInput(farm, new Pig());
+                   break;
+               case 7:
+                   ChooseGrazingField.CollectInput(farm, new Sheep());
+                   break;
         }
     }
 }

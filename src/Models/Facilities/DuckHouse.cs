@@ -2,15 +2,15 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
+using Trestlebridge.Models.Animals;
 using System.Linq;
 
 namespace Trestlebridge.Models.Facilities {
-    public class GrazingField : IFacility<IGrazing>
+    public class DuckHouse : IFacility<Duck>
     {
-        private int _capacity = 50;
+        private int _capacity = 1;
         private Guid _id = Guid.NewGuid();
 
-        private List<IGrazing> _animals = new List<IGrazing>();
 
         public double Capacity {
             get {
@@ -18,36 +18,40 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
-          //method for returning count of grazing animals
-          public int GetGrazingAnimalCount() {
-            return _animals.Count();
+          //method for returning count of ducks
+          public int GetDuckCount() {
+            return DucksList.Count();
         }
 
-        public void AddResource (IGrazing animal)
+        List<Duck> DucksList = new List<Duck>();
+        public void AddResource (Duck duck)
         {
             // TODO: implement this...
-            _animals.Add(animal);
-            
+            DucksList.Add(duck);
+        
         }
 
-        public void AddResource (List<IGrazing> animals) 
+        public void AddResource (List<Duck> ducks) 
         {
-            foreach (IGrazing animal in animals)
+            foreach (Duck duck in ducks)
             {
-                _animals.Add(animal);
+                DucksList.Add(duck);
             }
            
         }
+
 
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
-            output.Append($"Grazing field {shortId} has {this._animals.Count} animals\n");
-            this._animals.ForEach(a => output.Append($"   {a}\n"));
+            output.Append($"Duck House {shortId} has {this.DucksList.Count} ducks\n");
+            this.DucksList.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
         }
     }
+
+ 
 }

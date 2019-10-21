@@ -3,11 +3,12 @@ using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models.Animals;
+using System.Linq;
 
 namespace Trestlebridge.Models.Facilities {
     public class ChickenHouse : IFacility<Chicken>
     {
-        private int _capacity = 50;
+        private int _capacity = 10;
         private Guid _id = Guid.NewGuid();
 
 
@@ -16,6 +17,12 @@ namespace Trestlebridge.Models.Facilities {
                 return _capacity;
             }
         }
+
+        //method for returning count of chickens
+        public int GetChickenCount() {
+            return ChickensList.Count();
+        }
+
         List<Chicken> ChickensList = new List<Chicken>();
         public void AddResource (Chicken chicken)
         {
