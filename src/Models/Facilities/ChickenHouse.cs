@@ -28,7 +28,6 @@ namespace Trestlebridge.Models.Facilities {
         {
             // TODO: implement this...
             ChickensList.Add(chicken);
-            Console.WriteLine($"{this._id}");
         }
 
         public void AddResource (List<Chicken> chickens) 
