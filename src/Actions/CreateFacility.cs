@@ -11,6 +11,7 @@ namespace Trestlebridge.Actions {
             // Console.WriteLine ("2. Plowed field");
             Console.WriteLine ("2. Chicken House");
             Console.WriteLine ("3. Duck House");
+            Console.WriteLine ("4. Return");
 
             Console.WriteLine ();
             Console.WriteLine ("Choose what you want to create");
@@ -42,6 +43,8 @@ namespace Trestlebridge.Actions {
                     Console.WriteLine($"You have successfully added a new duck house! You now have {farm.DuckHouses.Count()} duck house(s). Press ENTER to continue.");
                     Console.ReadLine();
                     break; 
+                case 4:
+                    break;    
             }
 
             
