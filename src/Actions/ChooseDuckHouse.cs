@@ -26,7 +26,7 @@ namespace Trestlebridge.Actions {
                     Console.WriteLine($"A duck has been added to the facility. You currently have {farm.DuckHouses[realChoice].GetDuckCount()} duck(s) in this house. Press the 'Enter' key to continue.");
                     
                     Console.ReadLine();
-                    
+
                     } else {
                         Console.WriteLine("You do not currently have the capacity to add this animal. Please add a new facility. Press ENTER to continue.");
                         Console.ReadLine();
