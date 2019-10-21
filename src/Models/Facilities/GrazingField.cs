@@ -39,6 +39,9 @@ namespace Trestlebridge.Models.Facilities {
            
         }
 
+        //get animals by type
+    
+
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();
