@@ -18,6 +18,9 @@ namespace Trestlebridge.Models.Plants
         {
             return _seedsProduced;
         }
+        public string GetName(){
+            return Type;
+        }
         public override string ToString () {
             return $"Lightly Salted sunflower seeds. Mmmmm";
         }

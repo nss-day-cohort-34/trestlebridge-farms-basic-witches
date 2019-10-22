@@ -21,6 +21,10 @@ namespace Trestlebridge.Models.Facilities {
             _rowsOfPlants.Add(seed);
         }
 
+        public int GetPlantCount(){
+            return _rowsOfPlants.Count();
+        }
+
         public void AddResource(List<ISeedProducing> seeds)
         {
             foreach (ISeedProducing seed in seeds)
