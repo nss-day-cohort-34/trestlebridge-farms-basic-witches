@@ -46,7 +46,7 @@ namespace Trestlebridge.Actions {
                     int choice = Int32.Parse(Console.ReadLine());
                     int realChoice = choice - 1;
                     availableGrazingFields[realChoice].AddResource(animal);
-                    Console.WriteLine($"A animal has been added to the facility. You currently have {availableGrazingFields[realChoice].GetGrazingAnimalCount()} animal(s) in this house. Press the 'Enter' key to continue.");
+                    Console.WriteLine($"An animal has been added to the field. You currently have {availableGrazingFields[realChoice].GetGrazingAnimalCount()} animal(s) in this pasture. Press the 'Enter' key to continue.");
                     grazingFieldCount--;
                 }
             Console.ReadLine();

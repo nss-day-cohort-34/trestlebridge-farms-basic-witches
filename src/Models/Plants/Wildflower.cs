@@ -12,6 +12,9 @@ namespace Trestlebridge.Models.Plants
         {
             return _compostKG;
         }
+        public string GetName(){
+            return Type;
+        }
     public override string ToString () {
             return $"Here, I picked these for you :)";
         }
