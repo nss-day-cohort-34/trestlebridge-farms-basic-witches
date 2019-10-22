@@ -21,6 +21,7 @@ namespace Trestlebridge.Actions {
             Console.Write ("> ");
             string input = Console.ReadLine ();
 
+            try {
             switch (Int32.Parse(input))
             {
                 case 1:
@@ -50,8 +51,22 @@ namespace Trestlebridge.Actions {
                     Console.ReadLine();
                     break;     
                 case 6:
-                    break;    
+                    break; 
+                default:
+                    Console.WriteLine("You entered an invalid entry. Please press ENTER to try again.");
+                    Console.ReadLine();
+                    Console.Clear();
+                    CollectInput(farm);
+                    break;   
             }
+
+            } catch {
+                Console.WriteLine("You entered an invalid entry. Press ENTER and try again.");
+                Console.ReadLine();
+                 Console.Clear();
+                CollectInput(farm);
+            }
+
 
             
         }

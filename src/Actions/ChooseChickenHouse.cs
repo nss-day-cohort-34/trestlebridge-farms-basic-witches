@@ -44,8 +44,8 @@ namespace Trestlebridge.Actions
                     availableChickenHouses[realChoice].AddResource(chicken);
                     Console.WriteLine($"A chicken has been added to the facility. You currently have {availableChickenHouses[realChoice].GetChickenCount()} chicken(s) in this house. Press the 'Enter' key to continue.");
                     chickenCount--;
+                    Console.ReadLine();
                 }
-            Console.ReadLine();
             }
         }
     }
