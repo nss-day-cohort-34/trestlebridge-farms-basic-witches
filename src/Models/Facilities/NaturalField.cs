@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 using System.Linq;
+using Trestlebridge.Models.Plants;
 
 namespace Trestlebridge.Models.Facilities {
 
@@ -33,12 +34,23 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
+        //get count per plant type for natural fields (sunflower and wildflower)
+         public void getSunflowers(){
+            List<ICompostProducing>sunflowerList = _rowsOfPlants.Where(p => p.GetType() == typeof(Sunflower)).ToList();
+            Console.WriteLine($"You have {sunflowerList.Count} sunflower row(s) in this field.");
+        }
+
+        public void getWildflowers(){
+            List<ICompostProducing>wildflowerList = _rowsOfPlants.Where(p => p.GetType() == typeof(Wildflower)).ToList();
+            Console.WriteLine($"You have {wildflowerList.Count} wildflower row(s) in this field.");
+        }
+
          public override string ToString()
         {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
-            output.Append($"Natural field {shortId} has {this._rowsOfPlants.Count} plants\n");
+            output.Append($"Natural field {shortId} has {this._rowsOfPlants.Count} row(s)\n");
             this._rowsOfPlants.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
