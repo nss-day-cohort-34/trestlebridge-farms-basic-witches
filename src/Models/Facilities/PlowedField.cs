@@ -14,6 +14,7 @@ namespace Trestlebridge.Models.Facilities {
                 return _capacity;
             }
         }
+        private Guid _id = Guid.NewGuid();
         private List<ISeedProducing> _rowsOfPlants = new List<ISeedProducing>();
         public void AddResource(ISeedProducing seed)
         {
@@ -26,6 +27,17 @@ namespace Trestlebridge.Models.Facilities {
             {
                 _rowsOfPlants.Add(seed);
             }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder output = new StringBuilder();
+            string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
+
+            output.Append($"Plowed field {shortId} has {this._rowsOfPlants.Count} plants\n");
+            this._rowsOfPlants.ForEach(a => output.Append($"   {a}\n"));
+
+            return output.ToString();   
         }
     }
 }
