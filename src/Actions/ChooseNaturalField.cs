@@ -33,6 +33,8 @@ namespace Trestlebridge.Actions {
                 while (fieldCount > 0)
                 {
                     Console.WriteLine($"{i + 1}: This field currently has {availableNaturalFields[i].GetPlantCount()} rows of plants with a capacity of {availableNaturalFields[i].Capacity} rows.");
+                    availableNaturalFields[i].getSunflowers();
+                    availableNaturalFields[i].getWildflowers();
                     Console.WriteLine($"Press 1 to plant your {seed.GetName()} seeds in this field.");
                     Console.Write("> ");
                     int choice = Int32.Parse(Console.ReadLine());

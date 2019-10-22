@@ -5,6 +5,7 @@ namespace Trestlebridge.Models.Plants
 {
     public class Sesame : IResource, ISeedProducing
     {
+        private Guid _id = Guid.NewGuid();
         private int _seedsProduced = 40;
         public string Type { get; } = "Sesame";
         public string GetName(){

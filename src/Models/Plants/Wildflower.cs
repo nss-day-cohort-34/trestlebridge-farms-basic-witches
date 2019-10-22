@@ -16,7 +16,7 @@ namespace Trestlebridge.Models.Plants
             return Type;
         }
     public override string ToString () {
-            return $"Here, I picked these for you :)";
+            return $"Here, I picked these wildflowers for you :)";
         }
     }
 }

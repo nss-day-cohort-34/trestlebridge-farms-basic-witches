@@ -6,6 +6,7 @@ namespace Trestlebridge.Models.Plants
 
     public class Sunflower : IResource, ICompostProducing, ISeedProducing
     {
+        private Guid _id = Guid.NewGuid();
         public string Type { get; } = "Sunflower";
         private int _seedsProduced = 650;
         private double _compostKG = 21.6;
