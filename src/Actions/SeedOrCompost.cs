@@ -16,7 +16,9 @@ namespace Trestlebridge.Actions{
             Console.WriteLine("What will these sunflowers be producing?");
             Console.Write ("> ");
             string choice = Console.ReadLine();
-            switch (Int32.Parse(choice))
+
+            try {
+                switch (Int32.Parse(choice))
                 {
                     case 1:
                         ChoosePlowedField.CollectInput(farm, new Sunflower());
@@ -25,8 +27,20 @@ namespace Trestlebridge.Actions{
                         ChooseNaturalField.CollectInput(farm, new Sunflower());
                         break;
                     case 3:
+                        break;  
+                    default:
+                        Console.WriteLine("You entered an invalid entry. Please press ENTER to try again.");
+                        Console.ReadLine();
+                        Console.Clear();
+                        CollectInput(farm);
                         break;        
                 }
+            } catch {
+                Console.WriteLine("You entered an invalid entry. Press ENTER and try again.");
+                Console.ReadLine();
+                Console.Clear();
+                CollectInput(farm);
+            }
         }
     }
 }

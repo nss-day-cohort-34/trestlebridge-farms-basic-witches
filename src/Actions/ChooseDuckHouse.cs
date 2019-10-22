@@ -44,8 +44,8 @@ namespace Trestlebridge.Actions
                     availableHouses[realChoice].AddResource(duck);
                     Console.WriteLine($"A duck has been added to the facility. You currently have {availableHouses[realChoice].GetDuckCount()} duck(s) in this house. Press the 'Enter' key to continue.");
                     duckCount--;
+                    Console.ReadLine();
                 }
-            Console.ReadLine();
             }
         }
     }

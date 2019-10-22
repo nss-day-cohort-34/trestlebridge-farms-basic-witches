@@ -48,8 +48,8 @@ namespace Trestlebridge.Actions {
                     availableGrazingFields[realChoice].AddResource(animal);
                     Console.WriteLine($"An animal has been added to the field. You currently have {availableGrazingFields[realChoice].GetGrazingAnimalCount()} animal(s) in this pasture. Press the 'Enter' key to continue.");
                     grazingFieldCount--;
+                    Console.ReadLine();
                 }
-            Console.ReadLine();
             }
         }
     }
