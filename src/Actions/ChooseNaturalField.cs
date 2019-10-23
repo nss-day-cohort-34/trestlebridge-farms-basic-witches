@@ -42,8 +42,8 @@ namespace Trestlebridge.Actions {
                     availableNaturalFields[realChoice].AddResource(seed);
                     Console.WriteLine($"1 row of plants have been added to this field. You currently have {availableNaturalFields[realChoice].GetPlantCount()} row(s) in this field. Press the 'Enter' key to continue.");
                     fieldCount--;
+                    Console.ReadLine();
                 }
-                Console.ReadLine();
             }
         }
     }
